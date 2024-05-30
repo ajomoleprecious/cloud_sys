@@ -1,0 +1,237 @@
+<!DOCTYPE html>
+<html lang="nl-BE">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="author" content="Precious Ajomole">
+    <meta name="description" content="Web winkel voor movies">
+    <title>WatchMovies | Home</title>
+    <link rel="shortcut icon" href="assets/icons/website_icon.ico" type="image/x-icon">
+    <link rel="stylesheet" href="css/reset.css">
+    <link rel="stylesheet" href="css/style.css">
+    <script src="https://kit.fontawesome.com/cd8c9527e1.js" crossorigin="anonymous" defer></script>
+    <script src="js/index.js" defer></script>
+</head>
+
+<body>
+    <?php
+    // Database connection
+    $servername = "db";  // This should match the service name in your docker-compose.yml
+    $username = "website";
+    $password = "website";
+    $dbname = "backend";
+
+    // Create connection
+    $conn = new mysqli($servername, $username, $password, $dbname);
+
+    // Check connection
+    if ($conn->connect_error) {
+        die("Connection failed: " . $conn->connect_error);
+    } else {
+        echo "Connected successfully<br>";
+    }
+
+    // Create table
+    $sql_create_table = "CREATE TABLE IF NOT EXISTS users (
+        id INT(6) UNSIGNED AUTO_INCREMENT PRIMARY KEY,
+        login_time DATETIME
+    )";
+
+    if ($conn->query($sql_create_table) === TRUE) {
+        echo "Table created successfully<br>";
+    } else {
+        echo "Error creating table: " . $conn->error . "<br>";
+    }
+
+    // Insert into table
+    $current_datetime = date("Y-m-d H:i:s");
+    $sql_insert = "INSERT INTO users (login_time) VALUES ('$current_datetime')";
+
+    if ($conn->query($sql_insert) === TRUE) {
+        echo "New record inserted successfully<br>";
+    } else {
+        echo "Error: " . $sql_insert . "<br>" . $conn->error . "<br>";
+    }
+
+    // Close the connection
+    $conn->close();
+    ?>
+    <header class="header">
+        <a id="logo" class="header__logo" href="index.html"><img class="logo__img" src="assets/imgs/logo.webp"
+                alt="logo">Watch<span>Movies</span></a>
+        <nav>
+            <ul class="header__menu">
+                <li class="menu__item menu__item--active"><a href="index.html">Home</a></li>
+                <li class="menu__item"><a href="shop.html">Shop</a></li>
+                <li class="menu__item"><a href="contact.html">Contact</a></li>
+                <li class="menu__item"><a href="klanten.html">Klanten</a></li>
+            </ul>
+        </nav>
+        <section class="header__menu2">
+            <form action="shop.html" method="get">
+                <input class="header__menu2__search" type="text" placeholder="zoek een product" name="product">
+                <input class="header__menu2__searchButton" type="submit" value="Zoek">
+            </form>
+            <button class="header__menu2__shopping" aria-label="button to shopping cart"><i
+                    class="fa-solid fa-cart-shopping"></i></button>
+            <button class="header__menu2__wishlist" aria-label="button to whishlist"><i
+                    class="fa-solid fa-heart"></i></button>
+            <button class="header__menu2__light" aria-label="button to switch light mode">
+                <i class="fa-solid fa-sun"></i>
+            </button>
+        </section>
+        <section class="ham_menu">
+            <input type="checkbox" id="check" name="toggleMenu">
+            <label for="check" class="checkbtn" aria-label="button to toggle nav menu">
+                <i class="fas fa-bars"></i>
+            </label>
+        </section>
+    </header>
+    <main>
+        <section class="banner">
+            <a class="banner__img" href="shop.html"><img src="assets/imgs/movies-posters.webp" alt="banner"></a>
+            <section class="banner__text">
+                <h1>WatchMovies</h1>
+                <p>De beste films voor de beste prijs &#129321;</p>
+                <a href="shop.html"><input type="button" value="bekijk alles!"></a>
+            </section>
+        </section>
+        <section class="most">
+            <h2>Meest&nbsp;verkochten</h2>
+            <p><a href="shop.html">zie&nbsp;meer&nbsp;&rightarrow;</a></p>
+            <section id="mostSoldProducts">
+                <article class="product__card">
+                    <a class="product__img" href="products/the-best-man.html">
+                        <img src="assets/imgs/10/1.webp" alt="The Best Man">
+                    </a>
+                    <abbr class="product__title" title="The Best Man">The Best Man</abbr>
+                    <i class="fa-solid fa-heart product_wishlistBtn liked"></i>
+                    <p class="product__genre">actie</p>
+                    <p class="product__releaseYear">2023</p>
+                    <p class="product__price">9.99</p>
+                    <section id="product__score">
+                        <section>
+                            <span class="fa fa-star checked"></span>
+                            <span class="fa fa-star checked"></span>
+                            <span class="fa fa-star checked"></span>
+                            <span class="fa fa-star checked"></span>
+                            <span class="fa fa-star"></span>
+                        </section>
+                    </section>
+                    <p class="product__sales">1543</p>
+                </article>
+                <article class="product__card">
+                    <a class="product__img" href="products/the-public-enemy.html">
+                        <img src="assets/imgs/12/1.webp" alt="The Public Enemy">
+                    </a>
+                    <abbr class="product__title" title="The Public Enemy">The Public Enemy</abbr>
+                    <i class="fa-solid fa-heart product_wishlistBtn"></i>
+                    <p class="product__genre">misdaad</p>
+                    <p class="product__releaseYear">1931</p>
+                    <p class="product__price">5.52</p>
+                    <section id="product__score">
+                        <section>
+                            <span class="fa fa-star checked"></span>
+                            <span class="fa fa-star checked"></span>
+                            <span class="fa fa-star checked"></span>
+                            <span class="fa fa-star checked"></span>
+                            <span class="fa fa-star"></span>
+                        </section>
+                    </section>
+                    <p class="product__sales">819</p>
+                </article>
+
+                <article class="product__card">
+                    <a href="products/satyricon.html" class="product__img">
+                        <img src="assets/imgs/11/1.webp" alt="Satyricon">
+                    </a>
+                    <abbr class="product__title" title="Satyricon">Satyricon</abbr>
+                    <i class="fa-solid fa-heart product_wishlistBtn"></i>
+                    <p class="product__genre">komedie</p>
+                    <p class="product__releaseYear">1969</p>
+                    <p class="product__price">5.85</p>
+                    <section id="product__score">
+                        <section>
+                            <span class="fa fa-star checked"></span>
+                            <span class="fa fa-star checked"></span>
+                            <span class="fa fa-star checked"></span>
+                            <span class="fa fa-star checked"></span>
+                            <span class="fa fa-star"></span>
+                        </section>
+                    </section>
+                    <p class="product__sales">578</p>
+                </article>
+
+            </section>
+        </section>
+        <section class="about">
+            <section class="location">
+                <section class="location__text">
+                    <h2>Onze&nbsp;winkel</h2>
+                    <p>WatchMovies</p>
+                    <p>Noorderplaats 2</p>
+                    <p>2000 Antwerpen</p>
+                    <p>België</p>
+                    <p>Telefoon: <a href="tel:+00 000 00 00">00 000 00 00</a></p>
+                    <p><a href="mailto:precious&period;ajomole&commat;student&period;ap&period;be"
+                            class="email">E-mail</a></p>
+                </section>
+                <section class="location__img">
+                    <i class="fa-solid fa-shop"></i>
+                </section>
+            </section>
+            <section class="mission">
+                <section class="mission__text">
+                    <h2>Onze&nbsp;missie</h2>
+                    <p>WatchMovies is een webwinkel die zich specialiseert in het verkopen van films. We hebben een
+                        uitgebreid assortiment van films in verschillende genres. We hebben ook een fysieke winkel in
+                        Brussel.</p>
+                </section>
+                <section class="mission__img">
+                    <i class="fa-solid fa-bullseye"></i>
+                </section>
+            </section>
+            <section class="aboutMe">
+                <img class="selfimg" src="assets/imgs/precious.webp" alt="precious">
+                <section class="aboutMe__text">
+                    <h2>Over&nbsp;mij</h2>
+                    <p><q>Ik ben een student aan <u><a href="https://ap.be" target="_blank">AP-Hogeschool</a></u> en
+                            volg de
+                            studie Programmeren in de graduaatsopleiding. Eén van mijn passies en hobby's is genieten
+                            van
+                            een film of een leuke serie in mijn vrije tijd. Daarom heb ik een webwinkel gemaakt om
+                            liefhebbers van films, zoals ik, een plek te bieden waar ze hun favoriete films kunnen kopen
+                            voor een gekke prijs
+                            en
+                            recensies erover kunnen schrijven.</q><br><br>&mdash; Precious Ajomole</p>
+                    </p>
+                </section>
+            </section>
+        </section>
+        <a href="#" aria-label="link to scroll to the top" class="backToTop"><i class="fa-solid fa-arrow-up"></i></a>
+    </main>
+    <footer class="footer">
+        <a class="footer__logo" href="index.html"><img class="logo__img" src="assets/imgs/logo.webp" alt="logo"></a>
+        <nav>
+            <ul class="footer__menu">
+                <li class="menu__item menu__item--active"><a href="index.html">Home</a></li>
+                <li class="menu__item"><a href="shop.html">Shop</a></li>
+                <li class="menu__item"><a href="contact.html">Contact</a></li>
+            </ul>
+        </nav>
+        <section class="socials">
+            <section>
+                <a class="socials__link" target="_blank" aria-label="link to ap facebook"
+                    href="https://www.facebook.com/APHogeschool/"><i class="fa-brands fa-facebook"></i></a>
+                <a class="socials__link" target="_parent" aria-label="link to ap instagram"
+                    href="https://www.instagram.com/aphogeschool/"><i class="fa-brands fa-instagram"></i></a>
+                <a class="socials__link" target="_blank" aria-label="link to ap twitter"
+                    href="https://twitter.com/AP_Hogeschool"><i class="fa-brands fa-twitter"></i></a>
+            </section>
+            <p>&copy;2023&mdash;WatchMovies</p><br>
+        </section>
+    </footer>
+</body>
+
+</html>

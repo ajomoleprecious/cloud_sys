@@ -1,0 +1,529 @@
+<!DOCTYPE html>
+<html lang="nl-BE">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="author" content="Precious Ajomole">
+    <meta name="description" content="Web winkel voor movies">
+    <title>WatchMovies &#124; Shop</title>
+    <link rel="shortcut icon" href="assets/icons/website_icon.ico" type="image/x-icon">
+    <link rel="stylesheet" href="css/reset.css">
+    <link rel="stylesheet" href="css/style.css">
+    <script src="https://kit.fontawesome.com/cd8c9527e1.js" crossorigin="anonymous" defer></script>
+    <script src="js/index.js" defer></script>
+    <script src="js/shop.js" defer></script>
+</head>
+
+<body>
+    <header class="header">
+        <a id="logo" class="header__logo" href="index.html"><img class="logo__img" src="assets/imgs/logo.webp"
+                alt="logo">Watch<span>Movies</span></a>
+        <nav>
+            <ul class="header__menu">
+                <li class="menu__item"><a href="index.html">Home</a></li>
+                <li class="menu__item menu__item--active"><a href="shop.html">Shop</a></li>
+                <li class="menu__item"><a href="contact.html">Contact</a></li>
+                <li class="menu__item"><a href="klanten.html">Klanten</a></li>
+            </ul>
+        </nav>
+        <section class="header__menu2">
+            <form action="shop.html" method="get">
+                <input class="header__menu2__search" type="text" placeholder="zoek een product" name="product">
+                <input class="header__menu2__searchButton" type="submit" value="Zoek">
+            </form>
+            <button class="header__menu2__shopping" aria-label="button to shopping cart"><i
+                    class="fa-solid fa-cart-shopping"></i></button>
+            <button class="header__menu2__wishlist" aria-label="button to whishlist"><i
+                    class="fa-solid fa-heart"></i></button>
+            <button class="header__menu2__light" aria-label="button to switch light mode">
+                <i class="fa-solid fa-sun"></i>
+            </button>
+        </section>
+        <section class="ham_menu">
+            <input type="checkbox" id="check" name="toggleMenu">
+            <label for="check" class="checkbtn" aria-label="button to toggle nav menu">
+                <i class="fas fa-bars"></i>
+            </label>
+        </section>
+    </header>
+    <main>
+        <section class="banner">
+            <a class="banner__img" href="shop.html"><img src="assets/imgs/articles-movie-posters-w.webp"
+                    alt="banner"></a>
+            <section class="banner__text">
+                <h1>Korting op ALLES!</h1>
+                <p>Wij weten dat u een liefhebber bent van films. Met genoegen bieden we u een korting op alle films
+                    wanneer u de onderstaande code gebruikt tijdens uw aankoop. &#129321;</p>
+            </section>
+        </section>
+        <section class="filters">
+            <section>
+                <form action="#">
+                    <input type="checkbox" id="filterbox">
+                    <label for="filterbox" class="filterbtn">
+                        <i class="fa-solid fa-sliders"></i>
+                    </label>
+                </form>
+            </section>
+            <select class="filterSelect" name="movies">
+                <option selected value="none">&dash;&dash;sorteer de producten&dash;&dash;&#8659;</option>
+                <optgroup label="Volgens prijs">
+                    <option value="price_low">Laagste prijs</option>
+                    <option value="price_high">Hoogste prijs</option>
+                </optgroup>
+                <optgroup label="Volgens # verkochten">
+                    <option value="sales_low">Laagste # verkochten</option>
+                    <option value="sales_high">Hoogste # verkochten</option>
+                </optgroup>
+            </select>
+        </section>
+        <section class="shop">
+            <section class="shop__aside">
+                <i class="filterClose fa-solid fa-xmark"></i>
+                <form action="shop.html" method="get">
+                    <h2>Filter</h2>
+                    <section class="shop__aside__cat">
+                        <select name="category">
+                            <option selected value="none">&dash;&dash;categoriëen&dash;&dash;&#8659;</option>
+                            <option value="action">Actie</option>
+                            <option value="comedy">Komedie</option>
+                            <option value="drama">Drama</option>
+                            <option value="horror">Horror</option>
+                            <option value="romance">Romantiek</option>
+                            <option value="thriller">Thriller</option>
+                            <option value="western">Western</option>
+                        </select>
+                    </section>
+                    <section class="shop__aside__lang">
+                        <h3>Taal</h3>
+                        <section>
+                            <input checked type="checkbox" id="nl" name="lang" value="nl">
+                            <label for="nl">Nederlands</label>
+                        </section>
+                        <section>
+                            <input type="checkbox" id="en" name="lang" value="en">
+                            <label for="en">Engels</label>
+                        </section>
+                        <section>
+                            <input type="checkbox" id="fr" name="lang" value="fr">
+                            <label for="fr">Frans</label>
+                        </section>
+                        <section>
+                            <input type="checkbox" id="de" name="lang" value="de">
+                            <label for="de">Duits</label>
+                        </section>
+                        <section>
+                            <input type="checkbox" id="es" name="lang" value="es">
+                            <label for="es">Spaans</label>
+                        </section>
+                        <section>
+                            <input type="checkbox" id="it" name="lang" value="it">
+                            <label for="it">Italiaans</label>
+                        </section>
+                        <section>
+                            <input type="checkbox" id="pt" name="lang" value="pt">
+                            <label for="pt">Portugees</label>
+                        </section>
+                        <section>
+                            <input type="checkbox" id="ru" name="lang" value="ru">
+                            <label for="ru">Russisch</label>
+                        </section>
+                        <section>
+                            <input type="checkbox" id="ar" name="lang" value="ar">
+                            <label for="ar">Arabisch</label>
+                        </section>
+                        <section>
+                            <input type="checkbox" id="zh" name="lang" value="zh">
+                            <label for="zh">Chinees</label>
+                        </section>
+                    </section>
+                    <section class="shop__aside__price">
+                        <h3>Prijs</h3>
+                        <section>
+                            <input type="range" name="price" min="5" max="20" value="10" class="slider"
+                                id="filterPrice">
+                            <label id="label_filterPrice" for="filterPrice">10&euro;&plus;</label>
+                        </section>
+                    </section>
+                    <section class="shop__aside__length">
+                        <h3>Lengte</h3>
+                        <section>
+                            <input type="range" name="length" min="60" max="250" value="100" class="slider"
+                                id="filterLength">
+                            <label id="label_filterLength" for="filterLength">100 min</label>
+                        </section>
+                    </section>
+                    <section class="shop__aside__score">
+                        <h3>Score</h3>
+                        <section>
+                            <input type="radio" id="score1" name="star" value="1">
+                            <label for="score1">
+                                <span class="fa fa-star checked"></span>
+                                <span class="fa fa-star"></span>
+                                <span class="fa fa-star"></span>
+                                <span class="fa fa-star"></span>
+                                <span class="fa fa-star"></span>
+                            </label>
+                        </section>
+                        <section>
+                            <input type="radio" id="score2" name="star" value="2">
+                            <label for="score2">
+                                <span class="fa fa-star checked"></span>
+                                <span class="fa fa-star checked"></span>
+                                <span class="fa fa-star"></span>
+                                <span class="fa fa-star"></span>
+                                <span class="fa fa-star"></span>
+                            </label>
+                        </section>
+                        <section>
+                            <input type="radio" id="score3" name="star" value="3">
+                            <label for="score3">
+                                <span class="fa fa-star checked"></span>
+                                <span class="fa fa-star checked"></span>
+                                <span class="fa fa-star checked"></span>
+                                <span class="fa fa-star"></span>
+                                <span class="fa fa-star"></span>
+                            </label>
+                        </section>
+                        <section>
+                            <input type="radio" id="score4" name="star" value="4">
+                            <label for="score4">
+                                <span class="fa fa-star checked"></span>
+                                <span class="fa fa-star checked"></span>
+                                <span class="fa fa-star checked"></span>
+                                <span class="fa fa-star checked"></span>
+                                <span class="fa fa-star"></span>
+                            </label>
+                        </section>
+                        <section>
+                            <input type="radio" id="score5" name="star" value="5">
+                            <label for="score5">
+                                <span class="fa fa-star checked"></span>
+                                <span class="fa fa-star checked"></span>
+                                <span class="fa fa-star checked"></span>
+                                <span class="fa fa-star checked"></span>
+                                <span class="fa fa-star checked"></span>
+                            </label>
+                        </section>
+                    </section>
+                    <section class="shop__aside__option">
+                        <input class="shop__aside__option__reset" type="reset" value="Reset">
+                        <input class="shop__aside__option__submit" type="submit" value="Zoek">
+                    </section>
+                </form>
+            </section>
+            <section class="shop__products">
+                <article class="product__card">
+                    <a href="products/little-miss-broadway.html" class="product__img"><img src="assets/imgs/1/1.webp"
+                            alt="Little Miss Broadway"></a><abbr class="product__title"
+                        title="Little Miss Broadway">Little Miss Broadway</abbr>
+                    <i class="fa-solid fa-heart product_wishlistBtn liked"></i>
+                    <p class="product__genre">drama</p>
+                    <p class="product__releaseYear">1938</p>
+                    <button class="product__shopping" aria-label="button to add to shopping cart"
+                        onclick="addToCart('Little Miss Broadway', 9.99)"><i
+                            class="fa-solid fa-cart-shopping"></i>+</button>
+                    <p class="product__price">9.99</p>
+                    <section id="product__score">
+                        <section>
+                            <span class="fa fa-star checked"></span>
+                            <span class="fa fa-star checked"></span>
+                            <span class="fa fa-star checked"></span>
+                            <span class="fa fa-star checked"></span>
+                            <span class="fa fa-star"></span>
+                        </section>
+                    </section>
+                    <p class="product__sales">5000</p>
+                </article>
+                <article class="product__card">
+                    <a href="products/the-small-town.html" class="product__img"><img src="assets/imgs/2/1.webp"
+                            alt="The Small Town (a.k.a. The Town)"></a><abbr class="product__title"
+                        title="The Small Town">The Small Town</abbr><i
+                        class="fa-solid fa-heart product_wishlistBtn"></i>
+                    <p class="product__genre">drama</p>
+                    <p class="product__releaseYear">1997</p>
+                    <button class="product__shopping" aria-label="button to add to shopping cart"
+                        onclick="addToCart('The Small Town', 12.99)"><i class="fa-solid fa-cart-shopping"></i>+</button>
+                    <p class="product__price">12.99</p>
+                    <section id="product__score">
+                        <section>
+                            <span class="fa fa-star checked"></span>
+                            <span class="fa fa-star checked"></span>
+                            <span class="fa fa-star checked"></span>
+                            <span class="fa fa-star checked"></span>
+                            <span class="fa fa-star"></span>
+                        </section>
+                    </section>
+                    <p class="product__sales">5000</p>
+                </article>
+                <article class="product__card">
+                    <a href="products/hercules.html" class="product__img"><img src="assets/imgs/3/1.webp"
+                            alt="Hercules"></a>
+                    <abbr class="product__title" title="Hercules">Hercules</abbr>
+                    <i class="fa-solid fa-heart product_wishlistBtn liked"></i>
+                    <p class="product__genre">animatie</p>
+                    <p class="product__releaseYear">1997</p>
+                    <button class="product__shopping" aria-label="button to add to shopping cart"
+                        onclick="addToCart('Hercules', 14.99)"><i class="fa-solid fa-cart-shopping"></i>+</button>
+                    <p class="product__price">14.99</p>
+                    <section id="product__score">
+                        <section>
+                            <span class="fa fa-star checked"></span>
+                            <span class="fa fa-star checked"></span>
+                            <span class="fa fa-star checked"></span>
+                            <span class="fa fa-star checked"></span>
+                            <span class="fa fa-star"></span>
+                        </section>
+                    </section>
+                    <p class="product__sales">10000</p>
+                </article>
+                <article class="product__card">
+                    <a href="products/the-child.html" class="product__img"><img src="assets/imgs/4/1.webp"
+                            alt="The Child (L'enfant)"></a><abbr class="product__title" title="The Child (L'enfant)">The
+                        Child (L'enfant)</abbr>
+                    <i class="fa-solid fa-heart product_wishlistBtn"></i>
+                    <p class="product__genre">misdaad</p>
+                    <p class="product__releaseYear">2005</p>
+                    <button class="product__shopping" aria-label="button to add to shopping cart"
+                        onclick="addToCart('The Child', 19.99)"><i
+                            class="fa-solid fa-cart-shopping"></i>+</button>
+                    <p class="product__price">19.99</p>
+                    <section id="product__score">
+                        <section>
+                            <span class="fa fa-star checked"></span>
+                            <span class="fa fa-star checked"></span>
+                            <span class="fa fa-star checked"></span>
+                            <span class="fa fa-star checked"></span>
+                            <span class="fa fa-star"></span>
+                        </section>
+                    </section>
+                    <p class="product__sales">1000</p>
+                </article>
+                <article class="product__card">
+                    <a href="products/the-great-white-hype.html" class="product__img"><img src="assets/imgs/5/1.webp"
+                            alt="The Great White Hype"></a><abbr class="product__title" title="The Great White Hype">The
+                        Great White Hype</abbr>
+                    <i class="fa-solid fa-heart product_wishlistBtn liked"></i>
+                    <p class="product__genre">komedie</p>
+                    <p class="product__releaseYear">1996</p>
+                    <button class="product__shopping" aria-label="button to add to shopping cart"
+                        onclick="addToCart('The Great White Hype', 9.99)"><i
+                            class="fa-solid fa-cart-shopping"></i>+</button>
+                    <p class="product__price">9.99</p>
+                    <section id="product__score">
+                        <section>
+                            <span class="fa fa-star checked"></span>
+                            <span class="fa fa-star checked"></span>
+                            <span class="fa fa-star checked"></span>
+                            <span class="fa fa-star checked"></span>
+                            <span class="fa fa-star"></span>
+                        </section>
+                    </section>
+                    <p class="product__sales">5000</p>
+                </article>
+                <article class="product__card">
+                    <a href="products/the-sun-also-rises.html" class="product__img"><img src="assets/imgs/6/1.webp"
+                            alt="The Sun Also Rises"></a><abbr class="product__title" title="The Sun Also Rises">The Sun
+                        Also Rises</abbr>
+                    <i class="fa-solid fa-heart product_wishlistBtn liked"></i>
+                    <p class="product__genre">drama</p>
+                    <p class="product__releaseYear">1957</p>
+                    <button class="product__shopping" aria-label="button to add to shopping cart"
+                        onclick="addToCart('The Sun Also Rises', 12.99)"><i
+                            class="fa-solid fa-cart-shopping"></i>+</button>
+                    <p class="product__price">12.99</p>
+                    <section id="product__score">
+                        <section>
+                            <span class="fa fa-star checked"></span>
+                            <span class="fa fa-star checked"></span>
+                            <span class="fa fa-star checked"></span>
+                            <span class="fa fa-star checked"></span>
+                            <span class="fa fa-star"></span>
+                        </section>
+                    </section>
+                    <p class="product__sales">15000</p>
+                </article>
+                <article class="product__card">
+                    <a href="products/tracks.html" class="product__img"><img src="assets/imgs/7/1.webp"
+                            alt="Tracks"></a><abbr class="product__title" title="Tracks">Tracks</abbr>
+                    <i class="fa-solid fa-heart product_wishlistBtn"></i>
+                    <p class="product__genre">avontuur</p>
+                    <p class="product__releaseYear">2013</p>
+                    <button class="product__shopping" aria-label="button to add to shopping cart"
+                        onclick="addToCart('Tracks', 14.99)"><i class="fa-solid fa-cart-shopping"></i>+</button>
+                    <p class="product__price">14.99</p>
+                    <section id="product__score">
+                        <section>
+                            <span class="fa fa-star checked"></span>
+                            <span class="fa fa-star checked"></span>
+                            <span class="fa fa-star checked"></span>
+                            <span class="fa fa-star checked"></span>
+                            <span class="fa fa-star"></span>
+                        </section>
+                    </section>
+                    <p class="product__sales">8500</p>
+                </article>
+                <article class="product__card">
+                    <a href="products/nasty-old-people.html" class="product__img"><img src="assets/imgs/8/1.webp"
+                            alt="Nasty Old People"></a><abbr class="product__title" title="Nasty Old People">Nasty Old
+                        People</abbr>
+                    <i class="fa-solid fa-heart product_wishlistBtn"></i>
+                    <p class="product__genre">drama</p>
+                    <p class="product__releaseYear">2009</p>
+                    <button class="product__shopping" aria-label="button to add to shopping cart"
+                        onclick="addToCart('Nasty Old People', 14.99)"><i
+                            class="fa-solid fa-cart-shopping"></i>+</button>
+                    <p class="product__price">14.99</p>
+                    <section id="product__score">
+                        <section>
+                            <span class="fa fa-star checked"></span>
+                            <span class="fa fa-star checked"></span>
+                            <span class="fa fa-star checked"></span>
+                            <span class="fa fa-star checked"></span>
+                            <span class="fa fa-star"></span>
+                        </section>
+                    </section>
+                    <p class="product__sales">5897</p>
+                </article>
+                <article class="product__card">
+                    <a href="products/the-travelling-players.html" class="product__img"><img src="assets/imgs/9/1.webp"
+                            alt="The Travelling Players"></a><abbr class="product__title"
+                        title="The Travelling Players">The Travelling Players</abbr>
+                    <i class="fa-solid fa-heart product_wishlistBtn"></i>
+                    <p class="product__genre">drama</p>
+                    <p class="product__releaseYear">1975</p>
+                    <button class="product__shopping" aria-label="button to add to shopping cart"
+                        onclick="addToCart('The Travelling Players', 12.99)"><i
+                            class="fa-solid fa-cart-shopping"></i>+</button>
+                    <p class="product__price">12.99</p>
+                    <section id="product__score">
+                        <section>
+                            <span class="fa fa-star checked"></span>
+                            <span class="fa fa-star checked"></span>
+                            <span class="fa fa-star checked"></span>
+                            <span class="fa fa-star checked"></span>
+                            <span class="fa fa-star"></span>
+                        </section>
+                    </section>
+                    <p class="product__sales">2311</p>
+                </article>
+                <article class="product__card">
+                    <a href="products/the-best-man.html" class="product__img"><img src="assets/imgs/10/1.webp"
+                            alt="The Best Man"></a><abbr class="product__title" title="The Best Man">The Best Man</abbr>
+                    <i class="fa-solid fa-heart product_wishlistBtn liked"></i>
+                    <p class="product__genre">actie</p>
+                    <p class="product__releaseYear">2023</p>
+                    <button class="product__shopping" aria-label="button to add to shopping cart"
+                        onclick="addToCart('The Best Man', 9.99)"><i class="fa-solid fa-cart-shopping"></i>+</button>
+                    <p class="product__price">9.99</p>
+                    <section id="product__score">
+                        <section>
+                            <span class="fa fa-star checked"></span>
+                            <span class="fa fa-star checked"></span>
+                            <span class="fa fa-star checked"></span>
+                            <span class="fa fa-star checked"></span>
+                            <span class="fa fa-star"></span>
+                        </section>
+                    </section>
+                    <p class="product__sales">1543</p>
+                </article>
+                <article class="product__card">
+                    <a href="products/satyricon.html" class="product__img"><img src="assets/imgs/11/1.webp"
+                            alt="Satyricon"></a><abbr class="product__title" title="Satyricon">Satyricon</abbr>
+                    <i class="fa-solid fa-heart product_wishlistBtn"></i>
+                    <p class="product__genre">komedie</p>
+                    <p class="product__releaseYear">1969</p>
+                    <button class="product__shopping" aria-label="button to add to shopping cart"
+                        onclick="addToCart('Satyricon', 5.85)"><i class="fa-solid fa-cart-shopping"></i>+</button>
+                    <p class="product__price">5.85</p>
+                    <section id="product__score">
+                        <section>
+                            <span class="fa fa-star checked"></span>
+                            <span class="fa fa-star checked"></span>
+                            <span class="fa fa-star checked"></span>
+                            <span class="fa fa-star checked"></span>
+                            <span class="fa fa-star"></span>
+                        </section>
+                    </section>
+                    <p class="product__sales">578</p>
+                </article>
+                <article class="product__card">
+                    <a href="products/the-public-enemy.html" class="product__img"><img src="assets/imgs/12/1.webp"
+                            alt="The Public Enemy"></a><abbr class="product__title" title="The Public Enemy">The Public
+                        Enemy</abbr>
+                    <i class="fa-solid fa-heart product_wishlistBtn"></i>
+                    <p class="product__genre">misdaad</p>
+                    <p class="product__releaseYear">1931</p>
+                    <button class="product__shopping" aria-label="button to add to shopping cart"
+                        onclick="addToCart('The Public Enemy', 5.52)"><i
+                            class="fa-solid fa-cart-shopping"></i>+</button>
+                    <p class="product__price">5.52</p>
+                    <section id="product__score">
+                        <section>
+                            <span class="fa fa-star checked"></span>
+                            <span class="fa fa-star checked"></span>
+                            <span class="fa fa-star checked"></span>
+                            <span class="fa fa-star checked"></span>
+                            <span class="fa fa-star"></span>
+                        </section>
+                    </section>
+                    <p class="product__sales">819</p>
+                </article>
+            </section>
+        </section>
+        <a href="#" aria-label="link to scroll to the top" class="backToTop"><i class="fa-solid fa-arrow-up"></i></a>
+    </main>
+    <aside class="cart-summary">
+        <i class="fa-solid fa-xmark summaryclose"></i>
+        <h3>Winkelmandje</h3>
+        <div class="cartList">
+        </div>
+        <br>
+        <table>
+            <tbody class="summarytable">
+                <tr>
+                    <td>Subtotaal:</td>
+                    <td class="subtotaal"></td>
+                </tr>
+                <tr>
+                    <td>BTW 21&percnt;:</td>
+                    <td class="btw"></td>
+                <tr>
+                    <td>Totaal:</td>
+                    <td class="totaal"></td>
+                </tr>
+            </tbody>
+        </table>
+        <br>
+        <div class="summarybuttons">
+            <button class="summary__view"><i class="fa-solid fa-cart-shopping">
+                </i> Mandje bekijken</button>
+            <button class="summary__checkout">
+                <i class="fa-solid fa-cash-register"></i> Afrekenen</button>
+        </div>
+    </aside>
+    <footer class="footer">
+        <a class="footer__logo" href="index.html"><img class="logo__img" src="assets/imgs/logo.webp" alt="logo"></a>
+        <nav>
+            <ul class="footer__menu">
+                <li class="menu__item"><a href="index.html">Home</a></li>
+                <li class="menu__item menu__item--active"><a href="shop.html">Shop</a></li>
+                <li class="menu__item"><a href="contact.html">Contact</a></li>
+            </ul>
+        </nav>
+        <section class="socials">
+            <section>
+                <a class="socials__link" target="_blank" aria-label="link to ap facebook"
+                    href="https://www.facebook.com/APHogeschool/"><i class="fa-brands fa-facebook"></i></a>
+                <a class="socials__link" target="_parent" aria-label="link to ap instagram"
+                    href="https://www.instagram.com/aphogeschool/"><i class="fa-brands fa-instagram"></i></a>
+                <a class="socials__link" target="_blank" aria-label="link to ap twitter"
+                    href="https://twitter.com/AP_Hogeschool"><i class="fa-brands fa-twitter"></i></a>
+            </section>
+            <p>&copy;2023&mdash;WatchMovies</p><br>
+        </section>
+    </footer>
+</body>
+
+</html>

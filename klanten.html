@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="nl-be">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>WatchMovies | Klanten</title>
+    <link rel="shortcut icon" href="assets/icons/website_icon.ico" type="image/x-icon">
+    <link rel="stylesheet" href="css/reset.css">
+    <link rel="stylesheet" href="css/style.css">
+    <script src="https://kit.fontawesome.com/cd8c9527e1.js" crossorigin="anonymous" defer></script>
+    <script src="js/klanten.js" defer></script>
+    <script src="js/index.js" defer></script>
+</head>
+<body>
+    <header class="header">
+        <a id="logo" class="header__logo" href="index.html"><img class="logo__img" src="assets/imgs/logo.webp"
+                alt="logo">Watch<span>Movies</span></a>
+        <nav>
+            <ul class="header__menu">
+                <li class="menu__item"><a href="index.html">Home</a></li>
+                <li class="menu__item"><a href="shop.html">Shop</a></li>
+                <li class="menu__item"><a href="contact.html">Contact</a></li>
+                <li class="menu__item menu__item--active"><a href="klanten.html">Klanten</a></li>
+            </ul>
+        </nav>
+        <section class="header__menu2">
+            <form action="shop.html" method="get">
+                <input class="header__menu2__search" type="text" placeholder="zoek een product" name="product">
+                <input class="header__menu2__searchButton" type="submit" value="Zoek">
+            </form>
+            <button class="header__menu2__shopping" aria-label="button to shopping cart"><i
+                    class="fa-solid fa-cart-shopping"></i></button>
+            <button class="header__menu2__wishlist" aria-label="button to whishlist"><i
+                    class="fa-solid fa-heart"></i></button>
+            <button class="header__menu2__light" aria-label="button to switch light mode">
+                <i class="fa-solid fa-sun"></i>
+            </button>
+        </section>
+        <section class="ham_menu">
+            <input type="checkbox" id="check" name="toggleMenu">
+            <label for="check" class="checkbtn" aria-label="button to toggle nav menu">
+                <i class="fas fa-bars"></i>
+            </label>
+        </section>
+    </header>
+    <main>
+        <section id="klanten">
+            <article>
+                <h1>Klanten</h1>
+                <p>Onze klanten zijn onze beste reclame. Hieronder vind je enkele van onze klanten die hun mening over
+                    ons willen delen.</p>
+            </article>
+            <article class="klantenlist">
+            </article>
+        </section>
+        <a href="#" aria-label="link to scroll to the top" class="backToTop"><i class="fa-solid fa-arrow-up"></i></a>
+    </main>
+    <footer class="footer">
+        <a class="footer__logo" href="index.html"><img class="logo__img" src="assets/imgs/logo.webp" alt="logo"></a>
+        <nav>
+            <ul class="footer__menu">
+                <li class="menu__item"><a href="index.html">Home</a></li>
+                <li class="menu__item"><a href="shop.html">Shop</a></li>
+                <li class="menu__item"><a href="contact.html">Contact</a></li>
+                <li class="menu__item menu__item--active"><a href="klanten.html">Klanten</a></li>
+            </ul>
+        </nav>
+        <section class="socials">
+            <section>
+                <a class="socials__link" target="_blank" aria-label="link to ap facebook"
+                    href="https://www.facebook.com/APHogeschool/"><i class="fa-brands fa-facebook"></i></a>
+                <a class="socials__link" target="_parent" aria-label="link to ap instagram"
+                    href="https://www.instagram.com/aphogeschool/"><i class="fa-brands fa-instagram"></i></a>
+                <a class="socials__link" target="_blank" aria-label="link to ap twitter"
+                    href="https://twitter.com/AP_Hogeschool"><i class="fa-brands fa-twitter"></i></a>
+            </section>
+            <p>&copy;2023&mdash;WatchMovies</p><br>
+        </section>
+    </footer>
+</body>
+</html>

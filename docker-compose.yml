@@ -1,0 +1,25 @@
+version: '3.8'
+services:
+  php-apache:
+    image: ajomoleprecious/website:latest
+    ports:
+      - "8080:80"
+      - "443:443" # HTTPS
+    volumes:
+      - /var/www/html
+  db:
+    image: mysql:latest
+    environment:
+      - MYSQL_DATABASE=backend
+      - MYSQL_USER=website
+      - MYSQL_PASSWORD=website
+      - MYSQL_ALLOW_EMPTY_PASSWORD=1
+  phpmyadmin:
+    image: phpmyadmin/phpmyadmin
+    ports:
+      - "8081:80"
+    environment:
+      - PMA_HOST=db
+      - PMA_USER=website
+      - PMA_PASSWORD=website
+      - PMA_PORT=3306
